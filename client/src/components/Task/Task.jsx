@@ -12,14 +12,19 @@ export const Task = ({task}) => {
     }
 
     return (
-        <div>
-            <h2>{task.title}</h2>
+        <div className='task'>
+            <div className='task-top-side'>
+                <h2>{task.title}</h2>
+                <span onClick ={() => handleDone(task.done)} >{task.done === 1 ? "✔️" : "❌"}</span>
+            </div>
             <p>{task.description}</p>
-            <span>{task.done === 1 ? "✔️" : "❌"}</span>
-            <span>{task.createAt}</span>
-            <button onClick={() => handleDelete(task.id)} >Delete</button>
-            <button onClick ={() => navigate(`/edit/${task.id}`)} >Edit</button>
-            <button onClick ={() => handleDone(task.done)} >ver</button>
+            <div className='task-bottom-side'>
+                <span>Date: {task.createAt}</span>
+                <div className='task-btns'>
+                    <button onClick={() => handleDelete(task.id)} className='del-btn' >Delete</button>
+                    <button onClick ={() => navigate(`/edit/${task.id}`)} className='edit-btn' >Edit</button>
+                </div>
+            </div>
         </div>
     )
 }

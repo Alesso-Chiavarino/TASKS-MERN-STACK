@@ -32,7 +32,7 @@ const TaskForm = () => {
 
 
   return (
-    <div>
+    <div className='task-form'>
 
         {params.id ? <h1>Edit Task</h1> : <h1>Create Task</h1>}
 

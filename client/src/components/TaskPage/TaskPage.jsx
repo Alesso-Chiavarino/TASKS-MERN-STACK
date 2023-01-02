@@ -5,15 +5,11 @@ import { useTask } from '../../context/taskContext/TaskProvider';
 const TaskPage = () => {
 
     const {tasks, getTasks} = useTask()
-    // console.log(res)
-
-    // const [tasks, useTasks] = useState([])
 
     useEffect( () => {
 
-        // getTasks()
-        getTasks()
-        
+      getTasks();
+
     }, [tasks])
 
     const renderMain = () => {
@@ -26,12 +22,14 @@ const TaskPage = () => {
 
 
   return (
-    <div>
-        <h1>TaskPage</h1>
-        {renderMain()}
+    <section className='task-page'>
+        <h1 className='task-page__title'>TaskPage</h1>
+        <div className="tasks-container">
+          {renderMain()}
+        </div>
 
 
-    </div>
+    </section>
   )
 }
 

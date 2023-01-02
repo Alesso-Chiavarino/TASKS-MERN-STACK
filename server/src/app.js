@@ -10,11 +10,9 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-    origin: 'http://localhost:5173'
-}))
+app.use(cors())
 app.use('/api', apiRoutes);
-console.log(__dirname)
+// console.log(__dirname)
 app.use(express.static(join(__dirname, '../../client/dist')));
 
 
